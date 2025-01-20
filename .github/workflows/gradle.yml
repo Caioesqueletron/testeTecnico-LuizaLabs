@@ -45,11 +45,6 @@ jobs:
           ./gradlew clean build
           ./gradlew test
 
-      - name: Run Checkstyle Report
-        if: github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/dev'
-        run: |
-          ./gradlew checkstyleMain checkstyleTest
-
   deploy-application:
     if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-latest
