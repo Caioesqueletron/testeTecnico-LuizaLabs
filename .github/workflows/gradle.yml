@@ -3,23 +3,23 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
-      - develop
+      - prod
+      - dev
   pull_request:
     branches:
-      - master
-      - develop
+      - prod
+      - dev
 
 jobs:
   test-pipeline:
-    if: github.ref == 'refs/heads/developer'
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Test Pipeline
         run: echo "Olá Mundo"
 
   build-and-test:
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -45,12 +45,12 @@ jobs:
           ./gradlew test
 
       - name: Run Checkstyle Report
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/dev'
         run: |
           ./gradlew checkstyleMain checkstyleTest
 
   deploy-application:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
