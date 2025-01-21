@@ -131,7 +131,7 @@ Para implantar usando Docker:
    ```
 
 ## Fluxo CI/ CD:
-![img.png](src/main/java/br/com/luizalabs/testeTecnico/docs/img.png)
+![img.png](src/main/java/br/com/luizalabs/teste/tecnico/docs/img.png)
 
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork do repositório e enviar um pull request.
