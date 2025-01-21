@@ -81,4 +81,6 @@ jobs:
           ./gradlew sonar \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.verbose=true \
+            -Dsonar.projectKey=Caioesqueletron_testeTecnico-LuizaLabs \
+            -Dsonar.organization=caioesqueletron \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
