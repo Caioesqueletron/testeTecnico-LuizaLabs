@@ -44,7 +44,6 @@ sonar {
 		property "sonar.projectKey", "Caioesqueletron_testeTecnico-LuizaLabs"
 		property "sonar.organization", "caioesqueletron"
 		property "sonar.host.url", "https://sonarcloud.io"
-		property "sonar.login", "b0cdb8e3ef0a14a4b824359a3ad388735de0e46a"
 		property "sonar.verbose", "true"
 	}
 }
