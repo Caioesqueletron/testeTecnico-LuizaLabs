@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.1'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id "org.sonarqube" version "4.3.1.3277"
+	id 'org.sonarqube' version "4.4.0.3356"
 
 }
 
@@ -37,4 +37,14 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+sonar {
+	properties {
+		property "sonar.projectKey", "Caioesqueletron_testeTecnico-LuizaLabs"
+		property "sonar.organization", "caioesqueletron"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.login", "b0cdb8e3ef0a14a4b824359a3ad388735de0e46a"
+		property "sonar.verbose", "true"
+	}
 }
