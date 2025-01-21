@@ -26,12 +26,12 @@ cd <repository-folder>
 ### 2. Build do projeto
 Use o Gradle para compilar o projeto:
 ```bash
-gradle clean build
+./gradlew clean build
 ```
 
 ### 3. Execute a aplicação
 ```bash
-gradle bootRun
+./gradlew bootRun
 ```
 A aplicação estará disponível em `http://localhost:8080`.
 
@@ -116,7 +116,7 @@ A aplicação estará disponível em `http://localhost:8080`.
 ## Testes
 Execute os testes unitários com Gradle:
 ```bash
-gradle test
+./gradlew test
 ```
 
 ## Implantação
@@ -129,6 +129,13 @@ Para implantar usando Docker:
    ```bash
    docker run -p 8080:8080 api-conversao-pedidos
    ```
+
+## Fluxo CI/ CD:
+![img.png](src/main/java/br/com/luizalabs/teste/tecnico/docs/img.png)
+
+
+## URL de produção 
+- https://damp-darkness-8381.fly.dev/swagger-ui.html
 
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork do repositório e enviar um pull request.

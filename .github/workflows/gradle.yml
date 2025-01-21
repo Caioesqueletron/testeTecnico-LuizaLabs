@@ -11,13 +11,6 @@ on:
       - dev
 
 jobs:
-  test-pipeline:
-    if: github.ref == 'refs/heads/dev'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test Pipeline
-        run: echo "Olá Mundo"
-
   build-and-test:
     if: github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
