@@ -10,17 +10,22 @@ A API de Conversão de Pedidos é uma aplicação desenvolvida em Spring Boot, p
 - Suporte a filtros por ID do pedido e intervalo de datas.
 - Segue princípios de código limpo e arquitetura SOLID.
 
-## Requisitos
+## Tecnologias utilizadas
 - Java 17 ou superior
 - Gradle 7+
+- Spring Boot 3.4.+
+- Github Actions
+- Fly.io
+- Solid
+- DDD
 - Opcional: Docker (para implantação em container)
 
 ## Como Começar
 
 ### 1. Clone o repositório
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/Caioesqueletron/testeTecnico-LuizaLabs.git
+cd testeTecnico-LuizaLabs
 ```
 
 ### 2. Build do projeto
