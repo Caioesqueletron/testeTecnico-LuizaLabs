@@ -133,6 +133,10 @@ Para implantar usando Docker:
 ## Fluxo CI/ CD:
 ![img.png](src/main/java/br/com/luizalabs/teste/tecnico/docs/img.png)
 
+
+## URL de produção 
+- https://damp-darkness-8381.fly.dev/swagger-ui.html
+
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork do repositório e enviar um pull request.
 
