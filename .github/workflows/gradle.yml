@@ -72,7 +72,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
       - name: Run SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
