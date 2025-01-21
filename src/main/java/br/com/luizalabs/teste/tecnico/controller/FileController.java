@@ -59,8 +59,8 @@ public class FileController {
     @PostMapping(path = "/process", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<List<User>> processFile(@RequestPart("file") @Valid MultipartFile file,
                                                   @RequestParam(required = false) Long orderId,
-                                                  @RequestParam(required = false, defaultValue = "2020-01-01") @Validated @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Formato da data deve ser yyyy-MM-dd") String startDate,
-                                                  @RequestParam(required = false, defaultValue = "2020-01-01") @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Formato da data deve ser yyyy-MM-dd") @Valid String endDate) throws IOException {
+                                                  @RequestParam(required = false) @Validated @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Formato da data deve ser yyyy-MM-dd") String startDate,
+                                                  @RequestParam(required = false) @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Formato da data deve ser yyyy-MM-dd") @Valid String endDate) throws IOException {
         try {
             if (!Objects.requireNonNull(file.getOriginalFilename()).toLowerCase().endsWith(".txt")) {
                 throw new IllegalArgumentException("Only .txt files are allowed.");
