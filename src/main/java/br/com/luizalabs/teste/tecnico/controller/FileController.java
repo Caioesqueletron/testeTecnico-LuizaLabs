@@ -3,7 +3,7 @@ package br.com.luizalabs.teste.tecnico.controller;
 import br.com.luizalabs.teste.tecnico.exception.InternalServerErrorException;
 import br.com.luizalabs.teste.tecnico.models.FilterDTO;
 import br.com.luizalabs.teste.tecnico.models.User;
-import br.com.luizalabs.teste.tecnico.service.FileService;
+import br.com.luizalabs.teste.tecnico.service.impl.FileServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -32,7 +32,7 @@ import java.util.Objects;
 @AllArgsConstructor
 public class FileController {
 
-    private final FileService fileService;
+    private final FileServiceImpl fileServiceImpl;
 
     /**
      * Endpoint for processing a file and returning a list of users.
@@ -66,7 +66,7 @@ public class FileController {
                 throw new IllegalArgumentException("Only .txt files are allowed.");
             }
             FilterDTO filterDTO = new FilterDTO(orderId, startDate, endDate);
-            List<User> users = fileService.processFile(file, filterDTO);
+            List<User> users = fileServiceImpl.processFile(file, filterDTO);
             return ResponseEntity.ok(users);
         } catch (Exception e) {
             throw new InternalServerErrorException("An unexpected error occurred", e);

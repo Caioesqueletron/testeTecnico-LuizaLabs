@@ -1,6 +1,6 @@
 package br.com.luizalabs.teste.tecnico.controller;
 
-import br.com.luizalabs.teste.tecnico.service.FileService;
+import br.com.luizalabs.teste.tecnico.service.impl.FileServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +27,7 @@ class FileControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private FileService fileService;
+    private FileServiceImpl fileServiceImpl;
 
     private MockMultipartFile mockFile;
 

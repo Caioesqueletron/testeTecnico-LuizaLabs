@@ -4,6 +4,7 @@ import br.com.luizalabs.teste.tecnico.models.User;
 import br.com.luizalabs.teste.tecnico.components.LineProcessor;
 import br.com.luizalabs.teste.tecnico.components.UserFilter;
 import br.com.luizalabs.teste.tecnico.models.FilterDTO;
+import br.com.luizalabs.teste.tecnico.service.impl.FileServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -18,10 +19,10 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileServiceTest {
+class FileServiceImplTest {
 
     @InjectMocks
-    private FileService fileService;
+    private FileServiceImpl fileServiceImpl;
 
     @Mock
     private LineProcessor lineProcessor;
@@ -42,7 +43,7 @@ class FileServiceTest {
         when(lineProcessor.processLine(anyString(), anyMap())).thenReturn(new User(70, "Mock User", List.of()));
         when(userFilter.filterUsers(any(FilterDTO.class), anyList())).thenReturn(List.of(new User(70, "Mock User", List.of())));
 
-        List<User> users = fileService.processFile(file, filterDTO);
+        List<User> users = fileServiceImpl.processFile(file, filterDTO);
 
         assertEquals(1, users.size(), "Deve retornar um usuário.");
         verify(lineProcessor, atLeastOnce()).processLine(anyString(), anyMap());
